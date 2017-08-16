@@ -1,2 +1,75 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Welcome</h1>
+<!-- Registration -->
+<div class="row">
+<div class="col-sm-6">
+
+
+<div class="container">
+  <form action="/users" method="post">
+    <legend>Registration</legend>
+
+    <div class="">
+      <span class="First_name">First Name: </span>
+      <input type="text" id="first_name" name = "user[first_name]">
+    </div>
+
+    <div class="">
+      <span class="Last_name">Last Name: </span>
+      <input type="text" id="last_name" name = "user[last_name]">
+    </div>
+
+    <div class="">
+      <span class="Email">Email: </span>
+      <input type="text" id="email" name = "user[email]">
+    </div>
+
+    <div class="">
+      <span class="City">City: </span>
+      <input type="text" id="city" name = "location[city]">
+    </div>
+
+    <div class="">
+      <span class="State">State: </span>
+      <select name="location[state]">
+            <option value="TX">Texas</option>
+            <option value="WA">Washington</option>
+            <option value="IL">Illinios</option>
+            <option value="KS">Kansas</option>
+      </select>
+    </div>
+
+    <div class="">
+      <span class="Password">Password: </span>
+      <input type="text" id="password" name = "user[password]">
+    </div>
+
+    <div class="">
+      <span class="Password">Confirm Password: </span>
+      <input type="text" id="password" name = "user[password]">
+    </div>
+  <input type="submit" name="Register" value="Register">
+  </form>
+</div>
+</div>
+
+<!-- login -->
+<div class="col-sm-6">
+
+<div class="container">
+  <form action="/users" method="post">
+    <legend>Login</legend>
+
+    <div class="">
+      <span class="Email">Email: </span>
+      <input type="text" id="email" name = "user[email]">
+    </div>
+
+    <div class="">
+      <span class="Password">Password: </span>
+      <input type="text" id="password" name = "user[password]">
+    </div>
+  <input type="submit" name="login" value="Login">
+  </form>
+</div>
+</div>
+</div>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'users#new'
+  
   get 'discussions/index'
 
   get 'discussions/show'
