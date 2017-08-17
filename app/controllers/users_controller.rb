@@ -35,7 +35,6 @@ class UsersController < ApplicationController
       flash[:errors] = @user.errors.full_messages
       redirect_to "/users/#{@user.id}/edit"
     end
-
   end
 
   def delete
