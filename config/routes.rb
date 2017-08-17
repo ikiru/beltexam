@@ -1,55 +1,14 @@
 Rails.application.routes.draw do
-  root 'users#new'
-  
-  get 'discussions/index'
 
-  get 'discussions/show'
+root 'users#new'
 
-  get 'discussions/new'
+resources :sessions, only: [:new, :create, :destroy]
+resources :discussions, only: [:new, :show, :create]
+resources :events, only: [:new, :show, :create, :update, :edit, :delete]
+resources :meetups, only: [:new, :show, :create, :update, :edit,  :delete]
+resources :users, only: [:new, :show, :create, :update, :edit,  :delete]
 
-  get 'discussions/create'
 
-  get 'events/index'
-
-  get 'events/show'
-
-  get 'events/new'
-
-  get 'events/create'
-
-  get 'events/edit'
-
-  get 'events/update'
-
-  get 'events/delete'
-
-  get 'meetups/index'
-
-  get 'meetups/show'
-
-  get 'meetups/new'
-
-  get 'meetups/create'
-
-  get 'meetups/edit'
-
-  get 'meetups/update'
-
-  get 'meetups/delete'
-
-  get 'users/index'
-
-  get 'users/show'
-
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/edit'
-
-  get 'users/update'
-
-  get 'users/delete'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
