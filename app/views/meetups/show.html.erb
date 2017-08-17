@@ -1,2 +1,72 @@
-<h1>Meetups#show</h1>
-<p>Find me in app/views/meetups/show.html.erb</p>
+<h1>Welcome</h1>
+<p>Here are some of the events at your state:</p>
+<div class="container">
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Location</th>
+      <th>Host</th>
+      <th>Action/status</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>Join Cancel Edit Delete</td>
+    </tr>
+  </table>
+</div>
+
+<p>Here are some events in other states:</p>
+
+div class="container">
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Location</th>
+    <th>Host</th>
+    <th>Action/status</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>Join</td>
+  </tr>
+</table>
+</div>
+
+<div class="container">
+  <form class="" action="/event" method="post">
+
+    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+    <div class="">
+        <span class="Name">Name: </span>
+    <input type="text" name="Name" value="event[name]">
+  </div>
+
+  <div class="">
+    <span class="label">Date: </span>
+    <input type="date" name="Date" value="event[date]">
+  </div>
+
+  <div class="">
+    <span class="label">Location: </span>
+    <input type="text" name="City" value="event[city]">
+  </div>
+
+  <div class="">
+    <span class="State">State: </span>
+    <select name="event[state]">
+          <option value="TX">Texas</option>
+          <option value="WA">Washington</option>
+          <option value="IL">Illinios</option>
+          <option value="KS">Kansas</option>
+    </select>
+  </div>
+</form>
+</div>
