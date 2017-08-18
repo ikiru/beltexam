@@ -1,21 +1,27 @@
 class SessionsController < ApplicationController
-  def new
-    #code
-  end
+    before_action :require_login, only: [:destroy]
 
-  def create
-    @user = User.find_by_email(params[:email])
-    if @user && @user.authenticate(params[:password])
-      session[:user_id] = @user.id
-      redirect_to "/meetups/#{@user.id}"
-    else
-      flash[:errors] = ["Invalid Combination"]
-      redirect_to "/"
+    def create
+        @user = User.find_by_email(params[:email])
+
+        if @user
+            if @user.try(:authenticate, params[:password])
+                session[:user_id] = @user.id
+
+                return redirect_to events_path
+            end
+
+            flash[:errors] = ["password does not meet basic requirements"]
+        end
+
+        flash[:errors] = ["Email account not valid"]
+
+        return redirect_to :back
     end
-  end
 
-  def destroy
-    reset_session
-    redirect_to "/sessions/new"
-  end
+    def destroy
+        session.clear
+
+        return redirect_to root_path
+    end
 end
