@@ -2,15 +2,15 @@ class SessionsController < ApplicationController
   def new
     #code
   end
-  
+
   def create
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/users/#{@user.id}"
+      redirect_to "/meetups/#{@user.id}"
     else
       flash[:errors] = ["Invalid Combination"]
-      redirect_to "/session/new"
+      redirect_to "/"
     end
   end
 

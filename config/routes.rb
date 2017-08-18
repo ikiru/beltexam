@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
 root 'users#index'
 
+post 'login' => 'sessions#create'
+delete 'sessions/:id' => 'sessions#destroy'
+
 resources :sessions, only: [:new, :create, :destroy]
 resources :discussions, only: [:new, :show, :create]
 resources :events, only: [:new, :show, :create, :update, :edit, :delete]

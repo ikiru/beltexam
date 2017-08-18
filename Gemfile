@@ -26,6 +26,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap'
 gem 'hirb'
 gem 'rails-footnotes', '>= 4.0.0', '<5'
+# rails g rails_footnotes:install
 gem 'validates_timeliness', '~> 4.0'
 # rails generate validates_timeliness:install
 

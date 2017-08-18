@@ -4,9 +4,6 @@ class MeetupsController < ApplicationController
     @meetups = Meetup.find.all
   end
 
-  def new
-  end
-
   def create
     @meetup = Meetup.find_by_email(params[:email])
     if @meetup && @meetup.authenticate(params[:password])
